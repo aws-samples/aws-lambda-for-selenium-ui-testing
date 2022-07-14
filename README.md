@@ -30,7 +30,7 @@ sam build
 sam deploy --guided
 ```
 
-The first command will build a docker image from a Dockerfile and then copy the source of your application inside the Docker image. The Dockerfile will also download the required Selenium libraries Chromedriver binaries. The second command will package and deploy your application to AWS, with a series of prompts:
+The first command builds a docker image from a Dockerfile and then installs dependencies defined in selenium/requirements.txt, including the required Selenium libraries Chromedriver binaries. The processed template file is saved in the .aws-sam/build folder. The second command will package and deploy your application to AWS, with a series of prompts:
 
 * **Stack Name**: The name of the stack to deploy to CloudFormation. This should be unique to your account and region, and a good starting point would be something matching your project name.
 * **AWS Region**: The AWS region you want to deploy your app to.
@@ -40,17 +40,9 @@ The first command will build a docker image from a Dockerfile and then copy the 
 
 You can find your API Gateway Endpoint URL in the output values displayed after deployment.
 
-## Use the SAM CLI to build and test locally
+## Use the SAM CLI to test locally
 
-Build your application with the `sam build` command.
-
-```bash
-$ sam build
-```
-
-The SAM CLI builds a docker image from a Dockerfile and then installs dependencies defined in `selenium/requirements.txt` inside the docker image. The processed template file is saved in the `.aws-sam/build` folder.
-
-Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
+You can test the Lambda function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
 Run functions locally and invoke them with the `sam local invoke` command.
 
