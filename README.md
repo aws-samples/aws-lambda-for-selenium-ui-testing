@@ -1,6 +1,6 @@
 # Selenium UI testing with AWS Lambda
 
-This project contains source code and supporting files for a serverless application that runs Selenium Webdriver within an AWS Lambda function fronted by an API. This API can be triggered 100s of time by a API load testing utility like https://www.artillery.io/, effectively allowing Selenium UI testing at scale.
+This project contains source code and supporting files for a serverless application that runs Selenium Webdriver within an AWS Lambda function fronted by an API. This API can be triggered 100s of time by a API load testing utility like https://www.artillery.io/, effectively allowing Selenium UI automation and testing at scale.
 You can deploy the solution with the SAM CLI. This repository includes the following files and folders:
 
 - `selenium` folder - Code for the application's Lambda function and Project Dockerfile.
